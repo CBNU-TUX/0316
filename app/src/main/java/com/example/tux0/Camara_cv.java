@@ -5,21 +5,32 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.annotation.TargetApi;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.Environment;
 import android.util.Log;
 import android.view.SurfaceView;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
+import org.opencv.core.Core;
 import org.opencv.core.Mat;
+import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc;
 
+import java.io.File;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.Semaphore;
 
 import static android.Manifest.permission.CAMERA;
 
@@ -29,8 +40,10 @@ public class Camara_cv extends AppCompatActivity
     private static final String TAG = "opencv";
     private Mat matInput;
     private Mat matResult;
+    private Button btnCapture;
 
     private CameraBridgeViewBase mOpenCvCameraView;
+
 
 
 
@@ -70,13 +83,46 @@ public class Camara_cv extends AppCompatActivity
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        setContentView(R.layout.camara_layout);
+        setContentView(R.layout.activity_camera);
 
         mOpenCvCameraView = (CameraBridgeViewBase)findViewById(R.id.activity_surface_view);
         mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
         mOpenCvCameraView.setCameraIndex(0); // front-camera(1),  back-camera(0)
+
+        btnCapture = findViewById(R.id.btnCapture);
+        btnCapture.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                try {
+                    getWriteLock();
+
+                    File path = new File(String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)));
+                    path.mkdirs();
+                    File file = new File(path, "image.jpg");
+
+                    String filename = file.toString();
+
+                    Imgproc.cvtColor(matResult, matResult, Imgproc.COLOR_BGR2RGBA);
+                    boolean ret  = Imgcodecs.imwrite( filename, matResult);
+                    if ( ret ) Log.d(TAG, "SUCESS");
+                    else Log.d(TAG, "FAIL");
+
+
+                    Intent mediaScanIntent = new Intent( Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+                    mediaScanIntent.setData(Uri.fromFile(file));
+                    sendBroadcast(mediaScanIntent);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+
+                releaseWriteLock();
+
+            }
+        });
     }
+
 
     @Override
     public void onPause()
@@ -121,13 +167,22 @@ public class Camara_cv extends AppCompatActivity
     @Override
     public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
 
-        matInput = inputFrame.rgba();
+        try {
+            getWriteLock();
+            matInput = inputFrame.rgba();
 
-        if ( matResult == null )
-            matResult = new Mat(matInput.rows(), matInput.cols(), matInput.type());
+            if (matResult == null)
+                matResult = new Mat(matInput.rows(), matInput.cols(), matInput.type());
 
-        Process.ConvertRGBtoGray(matInput.getNativeObjAddr(), matResult.getNativeObjAddr());
+            Core.flip(matInput, matInput, 1);
+            Imgproc.cvtColor(matInput, matResult, Imgproc.COLOR_RGB2GRAY);
+//            Process.ConvertRGBtoGray(matInput.getNativeObjAddr(), matResult.getNativeObjAddr());
 
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
+        releaseWriteLock();
         return matResult;
     }
 
@@ -136,6 +191,15 @@ public class Camara_cv extends AppCompatActivity
         return Collections.singletonList(mOpenCvCameraView);
     }
 
+    private final Semaphore writeLock = new Semaphore(1);
+
+    public void getWriteLock() throws InterruptedException{
+        writeLock.acquire();
+    }
+
+    public void releaseWriteLock(){
+        writeLock.release();
+    }
 
     //여기서부턴 퍼미션 관련 메소드
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 200;
@@ -200,6 +264,7 @@ public class Camara_cv extends AppCompatActivity
         });
         builder.create().show();
     }
+
 
 
 }

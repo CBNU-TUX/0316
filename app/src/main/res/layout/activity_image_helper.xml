@@ -67,25 +67,25 @@
         android:id="@+id/Output"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:text="'name'"
         android:background="#00ff0000"
         android:fontFamily="@font/bm_ttf"
+        android:gravity="center"
+        android:text="'name'"
+        android:textAlignment="center"
         android:textSize="50sp"
         android:textStyle="bold"
-        android:textAlignment="center"
-        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Input"
-        app:layout_constraintVertical_bias="0.101" />
+        app:layout_constraintVertical_bias="0.218" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="172dp"
+        android:layout_marginBottom="100dp"
         android:background="#00ff0000"
         android:fontFamily="@font/bm_ttf"
         android:gravity="center"
@@ -95,6 +95,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

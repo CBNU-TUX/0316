@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 #opencv library
-OPENCVROOT:= C:\Users\Administrator\AndroidStudioProjects\1127_real\sdk
+OPENCVROOT:= C:\AndroidStudioProjects\0316\sdk
 OPENCV_CAMERA_MODULES:=on
 OPENCV_INSTALL_MODULES:=on
 OPENCV_LIB_TYPE:=SHARED
