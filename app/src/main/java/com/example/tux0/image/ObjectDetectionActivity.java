@@ -34,7 +34,7 @@ public class ObjectDetectionActivity<FirebaseCustomRemoteModel> extends ImageHel
 
         //File modelFile = new File("assets/model2.tflite");
 
-        try{ objectDetector = ObjectDetector.createFromFileAndOptions(this, "model2.tflite",options);}
+        try{ objectDetector = ObjectDetector.createFromFileAndOptions(this, "salad.tflite",options);}
         catch (IOException e){}
 //        objectDetector = ObjectDetection.getClient(options);
 

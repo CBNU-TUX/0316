@@ -19,12 +19,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
+import com.example.tux0.ObjectSearch;
 import com.example.tux0.R;
 
 import java.io.File;
@@ -184,34 +186,34 @@ public class ImageHelperActivity extends AppCompatActivity {
 
         getInputImageView().setImageBitmap(outputBitmap);
 
-        //if(DetectedName.size()==1){
-          //  Toast.makeText(this, DetectedName.get(0), Toast.LENGTH_SHORT).show();
-            //Intent intent = new Intent(this, ObjectSearch.class);
-//            //intent.putExtra("first", DetectedName.get(0));
-//            intent.putExtra("second", "empty");
-//            intent.putExtra("third", "empty");
-            //intent.putStringArrayListExtra("Detected",DetectedName);
-            //startActivity(intent);
-        //}
-        //else if(DetectedName.size()==2){
-          //  Toast.makeText(this, DetectedName.get(1), Toast.LENGTH_SHORT).show();
-            //Intent intent = new Intent(this, ObjectSearch.class);
-           // intent.putExtra("first", DetectedName.get(0));
-         //   intent.putExtra("second", DetectedName.get(1));
-         //   intent.putExtra("third", "empty");
-          //  startActivity(intent);
-        //}
-        //else if(DetectedName.size()==3){
-         //   Toast.makeText(this, DetectedName.get(2), Toast.LENGTH_SHORT).show();
-          //  Intent intent = new Intent(this, ObjectSearch.class);
-           // intent.putExtra("first", DetectedName.get(0));
-         //   intent.putExtra("second", DetectedName.get(1));
-         //   intent.putExtra("third", DetectedName.get(2));
-           // startActivity(intent);
-        //}
-        //else{
-          //  Toast.makeText(this, "객체수를 조정해주세요. (1~3)", Toast.LENGTH_SHORT).show();
-       // }
+        if(DetectedName.size()==1){
+            Toast.makeText(this, DetectedName.get(0), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, ObjectSearch.class);
+            //intent.putExtra("first", DetectedName.get(0));
+            intent.putExtra("second", "empty");
+            intent.putExtra("third", "empty");
+            intent.putStringArrayListExtra("Detected",DetectedName);
+            startActivity(intent);
+        }
+        else if(DetectedName.size()==2){
+            Toast.makeText(this, DetectedName.get(1), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, ObjectSearch.class);
+            intent.putExtra("first", DetectedName.get(0));
+            intent.putExtra("second", DetectedName.get(1));
+            intent.putExtra("third", "empty");
+            startActivity(intent);
+        }
+        else if(DetectedName.size()==3){
+            Toast.makeText(this, DetectedName.get(2), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, ObjectSearch.class);
+            intent.putExtra("first", DetectedName.get(0));
+            intent.putExtra("second", DetectedName.get(1));
+            intent.putExtra("third", DetectedName.get(2));
+            startActivity(intent);
+        }
+        else{
+            Toast.makeText(this, "객체수를 조정해주세요. (1~3)", Toast.LENGTH_SHORT).show();
+        }
 
        }
 }

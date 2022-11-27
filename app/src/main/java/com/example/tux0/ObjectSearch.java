@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -60,16 +61,16 @@ public class ObjectSearch extends AppCompatActivity {
                 // E/RecyclerView: No adapter attached; skipping layout로 실패 직접 선언하기로 바꿈
 //                ((SearchActivity) SearchActivity.mContext)
 //                        .ShowRecipe(temp); // -> Detected.get(0)
-                ShowRecipe(temp);
+                //ShowRecipe(temp);
             }catch(NullPointerException e){
                 Log.d("ObjectSearch","Object Search: Detected.size()==1");
             }
         }
         else if(Detected.size() == 2){
-                    ShowRecipe(Detected.get(0),Detected.get(1));
+                    //ShowRecipe(Detected.get(0),Detected.get(1));
         }
         else if(Detected.size() == 3){
-                    ShowRecipe(Detected.get(0),Detected.get(1),Detected.get(2));
+                    //ShowRecipe(Detected.get(0),Detected.get(1),Detected.get(2));
         }
 
 //        if(){
@@ -101,8 +102,9 @@ public class ObjectSearch extends AppCompatActivity {
                     if (snapshot.getKey().equals(ingre1)) {
                         //재료명 밑의 자식들을 하나하나 snapshot을 찍어 arrayList에 저장
                         for (DataSnapshot snapshot_2 : snapshot.getChildren()) {
-                            recipe recipe = snapshot_2.getValue(recipe.class);
-                            arrayList.add(recipe);
+                            try{recipe recipe = snapshot_2.getValue(recipe.class);
+                            arrayList.add(recipe);}
+                            catch(DatabaseException e){}
                         }
                     }
                 }
@@ -135,8 +137,9 @@ public class ObjectSearch extends AppCompatActivity {
                     if (snapshot.getKey().equals(ingre1)) {
                         //재료명 밑의 자식들을 하나하나 snapshot을 찍어 arrayList0에 저장
                         for (DataSnapshot snapshot_2 : snapshot.getChildren()) {
-                            recipe recipe1 = snapshot_2.getValue(recipe.class);
-                            arrayList0.add(recipe1);
+                            try{recipe recipe1 = snapshot_2.getValue(recipe.class);
+                            arrayList0.add(recipe1);}
+                            catch(DatabaseException e){}
                         }
                     }
                 }
@@ -146,12 +149,14 @@ public class ObjectSearch extends AppCompatActivity {
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                     if (snapshot.getKey().equals(ingre2)) {
                         for (DataSnapshot snapshot_2 : snapshot.getChildren()) {
-                            recipe recipe2 = snapshot_2.getValue(recipe.class);
-                            for (int i = 0; i < arrayList0.size(); i++) {
-                                if (arrayList0.get(i).getid().equals(recipe2.getid())) {
-                                    arrayList.add(recipe2);
-                                }
-                            }
+                           try {
+                               recipe recipe2 = snapshot_2.getValue(recipe.class);
+                               for (int i = 0; i < arrayList0.size(); i++) {
+                                   if (arrayList0.get(i).getid().equals(recipe2.getid())) {
+                                       arrayList.add(recipe2);
+                                   }
+                               }
+                           }catch(DatabaseException e){}
                         }
                     }
                 }
@@ -181,8 +186,9 @@ public class ObjectSearch extends AppCompatActivity {
                     if (snapshot.getKey().equals(ingre1)) {
                         //재료명 밑의 자식들을 하나하나 snapshot을 찍어 arrayList에 저장
                         for (DataSnapshot snapshot_2 : snapshot.getChildren()) {
-                            recipe recipe = snapshot_2.getValue(recipe.class);
-                            arrayList0.add(recipe);
+                            try{recipe recipe = snapshot_2.getValue(recipe.class);
+                            arrayList0.add(recipe);}
+                            catch(DatabaseException e){}
                         }
                     }
                 }
@@ -190,25 +196,29 @@ public class ObjectSearch extends AppCompatActivity {
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                     if (snapshot.getKey().equals(ingre2)) {
                         for (DataSnapshot snapshot_2 : snapshot.getChildren()) {
-                            recipe recipe2 = snapshot_2.getValue(recipe.class);
-                            for (int i = 0; i < arrayList0.size(); i++) {
-                                if (arrayList0.get(i).getid().equals(recipe2.getid())) {
-                                    arrayList1.add(recipe2);
+                            try {
+                                recipe recipe2 = snapshot_2.getValue(recipe.class);
+                                for (int i = 0; i < arrayList0.size(); i++) {
+                                    if (arrayList0.get(i).getid().equals(recipe2.getid())) {
+                                        arrayList1.add(recipe2);
+                                    }
                                 }
-                            }
-                        }
+                            }catch(DatabaseException e)
+                            {}                        }
                     }
                 }
 
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                     if (snapshot.getKey().equals(ingre3)) {
                         for (DataSnapshot snapshot_3 : snapshot.getChildren()) {
-                            recipe recipe3 = snapshot_3.getValue(recipe.class);
-                            for (int i = 0; i < arrayList1.size(); i++) {
-                                if (arrayList1.get(i).getid().equals(recipe3.getid())) {
-                                    arrayList.add(recipe3);
+                            try {
+                                recipe recipe3 = snapshot_3.getValue(recipe.class);
+                                for (int i = 0; i < arrayList1.size(); i++) {
+                                    if (arrayList1.get(i).getid().equals(recipe3.getid())) {
+                                        arrayList.add(recipe3);
+                                    }
                                 }
-                            }
+                            }catch(DatabaseException e){}
                         }
                     }
                 }
