@@ -1,1 +1,0 @@
-C:\AndroidStudioProjects\tux_end\sdk\build\intermediates\cxx\Debug\2d625202\obj\x86

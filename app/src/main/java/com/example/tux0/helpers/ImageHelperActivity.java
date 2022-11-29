@@ -26,7 +26,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
-import com.example.tux0.Camara_cv;
+//import com.example.tux0.CameraCheck;
+import com.example.tux0.CameraCheck;
 import com.example.tux0.ObjectSearch;
 import com.example.tux0.R;
 
@@ -82,17 +83,18 @@ public class ImageHelperActivity extends AppCompatActivity {
     }
 
     public void onStartCamera(View view){
-        //create a file to share with Camera
-        photoFile = createPhotoFile();
-
-        Uri fileUri = FileProvider.getUriForFile(this,"com.example.fileprovider",photoFile);
-
-        //create an intent
-        Intent intent =new Intent(ImageHelperActivity.this, Camara_cv.class);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT,fileUri);
-
-        //startActivitiyForResult
-        startActivityForResult(intent, REQUEST_CAPTURE_IMAGE);
+        Intent intent = new Intent(ImageHelperActivity.this, CameraCheck.class);
+        startActivity(intent);
+//        photoFile = createPhotoFile();
+//
+//        Uri fileUri = FileProvider.getUriForFile(this,"com.example.fileprovider",photoFile);
+//
+//        //create an intent
+//        Intent intent =new Intent(ImageHelperActivity.this, CameraCheck.class);
+//        intent.putExtra(MediaStore.EXTRA_OUTPUT,fileUri);
+//
+//        //startActivitiyForResult
+//        startActivityForResult(intent, REQUEST_CAPTURE_IMAGE);
     }
 
     private File createPhotoFile(){

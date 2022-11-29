@@ -5,7 +5,7 @@
 5    <uses-sdk
 6        android:minSdkVersion="21"
 6-->C:\AndroidStudioProjects\0316\sdk\java\AndroidManifest.xml
-7        android:targetSdkVersion="26" />
+7        android:targetSdkVersion="32" />
 7-->C:\AndroidStudioProjects\0316\sdk\java\AndroidManifest.xml
 8
 9</manifest>

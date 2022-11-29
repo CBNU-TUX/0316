@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.tux0.databinding.ActivityMainBinding;
+import com.example.tux0.image.ObjectDetectionActivity;
 import com.example.tux0.ui.opensource_go;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -220,6 +221,7 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(mintent);
 //            }
 //        });
+
         button_manual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -237,7 +239,7 @@ public class MainActivity extends AppCompatActivity {
         button_camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, objectDetection.class);
+                Intent intent = new Intent(MainActivity.this, ObjectDetectionActivity.class);
                 startActivity(intent);
             }
         });

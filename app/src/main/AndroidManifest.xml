@@ -67,6 +67,7 @@
             android:configChanges="keyboardHidden|orientation"
             android:exported="true"/>
 
+        <activity android:name=".CameraCheck" />
         <activity android:name=".ui.SubActivity"/>
         <activity android:name=".ui.opensource_go"/>
         <activity android:name=".SearchActivity"

@@ -11,11 +11,11 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": -1179207699
+    "memoizedHashCode": -789359821
   },
   {
     "level_": 0,
-    "message_": "rebuilding JSON C:\\AndroidStudioProjects\\0316\\sdk\\.cxx\\Debug\\3u5c3e6h\\armeabi-v7a\\android_gradle_build.json due to:",
+    "message_": "JSON \u0027C:\\AndroidStudioProjects\\0316\\sdk\\.cxx\\Debug\\3u5c3e6h\\armeabi-v7a\\android_gradle_build.json\u0027 was up-to-date",
     "file_": "C:\\AndroidStudioProjects\\0316\\sdk\\libcxx_helper\\CMakeLists.txt",
     "tag_": "debug|armeabi-v7a",
     "diagnosticCode_": 0,
@@ -25,147 +25,7 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": -482442993
-  },
-  {
-    "level_": 0,
-    "message_": "- expected json C:\\AndroidStudioProjects\\0316\\sdk\\.cxx\\Debug\\3u5c3e6h\\armeabi-v7a\\android_gradle_build.json file is not present, will remove stale json folder",
-    "file_": "C:\\AndroidStudioProjects\\0316\\sdk\\libcxx_helper\\CMakeLists.txt",
-    "tag_": "debug|armeabi-v7a",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": 537056347
-  },
-  {
-    "level_": 0,
-    "message_": "- missing previous command file C:\\AndroidStudioProjects\\0316\\sdk\\.cxx\\Debug\\3u5c3e6h\\armeabi-v7a\\metadata_generation_command.txt, will remove stale json folder",
-    "file_": "C:\\AndroidStudioProjects\\0316\\sdk\\libcxx_helper\\CMakeLists.txt",
-    "tag_": "debug|armeabi-v7a",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": 1209248569
-  },
-  {
-    "level_": 0,
-    "message_": "- command changed from previous, will remove stale json folder",
-    "file_": "C:\\AndroidStudioProjects\\0316\\sdk\\libcxx_helper\\CMakeLists.txt",
-    "tag_": "debug|armeabi-v7a",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": 1985640797
-  },
-  {
-    "level_": 0,
-    "message_": "removing stale contents from \u0027C:\\AndroidStudioProjects\\0316\\sdk\\.cxx\\Debug\\3u5c3e6h\\armeabi-v7a\u0027",
-    "file_": "C:\\AndroidStudioProjects\\0316\\sdk\\libcxx_helper\\CMakeLists.txt",
-    "tag_": "debug|armeabi-v7a",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": -812049181
-  },
-  {
-    "level_": 0,
-    "message_": "created folder \u0027C:\\AndroidStudioProjects\\0316\\sdk\\.cxx\\Debug\\3u5c3e6h\\armeabi-v7a\u0027",
-    "file_": "C:\\AndroidStudioProjects\\0316\\sdk\\libcxx_helper\\CMakeLists.txt",
-    "tag_": "debug|armeabi-v7a",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": -578961169
-  },
-  {
-    "level_": 0,
-    "message_": "executing cmake Executable : C:\\Users\\zldnl\\AppData\\Local\\Android\\Sdk\\cmake\\3.18.1\\bin\\cmake.exe\narguments : \n-HC:\\AndroidStudioProjects\\0316\\sdk\\libcxx_helper\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_SYSTEM_VERSION\u003d21\n-DANDROID_PLATFORM\u003dandroid-21\n-DANDROID_ABI\u003darmeabi-v7a\n-DCMAKE_ANDROID_ARCH_ABI\u003darmeabi-v7a\n-DANDROID_NDK\u003dC:\\Users\\zldnl\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\n-DCMAKE_ANDROID_NDK\u003dC:\\Users\\zldnl\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\n-DCMAKE_TOOLCHAIN_FILE\u003dC:\\Users\\zldnl\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\build\\cmake\\android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003dC:\\Users\\zldnl\\AppData\\Local\\Android\\Sdk\\cmake\\3.18.1\\bin\\ninja.exe\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dC:\\AndroidStudioProjects\\0316\\sdk\\build\\intermediates\\cxx\\Debug\\3u5c3e6h\\obj\\armeabi-v7a\n-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dC:\\AndroidStudioProjects\\0316\\sdk\\build\\intermediates\\cxx\\Debug\\3u5c3e6h\\obj\\armeabi-v7a\n-DCMAKE_BUILD_TYPE\u003dDebug\n-BC:\\AndroidStudioProjects\\0316\\sdk\\.cxx\\Debug\\3u5c3e6h\\armeabi-v7a\n-GNinja\n-DANDROID_STL\u003dc++_shared\njvmArgs : \n\n",
-    "file_": "C:\\AndroidStudioProjects\\0316\\sdk\\libcxx_helper\\CMakeLists.txt",
-    "tag_": "debug|armeabi-v7a",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": 1075954539
-  },
-  {
-    "level_": 0,
-    "message_": "Executable : C:\\Users\\zldnl\\AppData\\Local\\Android\\Sdk\\cmake\\3.18.1\\bin\\cmake.exe\narguments : \n-HC:\\AndroidStudioProjects\\0316\\sdk\\libcxx_helper\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_SYSTEM_VERSION\u003d21\n-DANDROID_PLATFORM\u003dandroid-21\n-DANDROID_ABI\u003darmeabi-v7a\n-DCMAKE_ANDROID_ARCH_ABI\u003darmeabi-v7a\n-DANDROID_NDK\u003dC:\\Users\\zldnl\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\n-DCMAKE_ANDROID_NDK\u003dC:\\Users\\zldnl\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\n-DCMAKE_TOOLCHAIN_FILE\u003dC:\\Users\\zldnl\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\build\\cmake\\android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003dC:\\Users\\zldnl\\AppData\\Local\\Android\\Sdk\\cmake\\3.18.1\\bin\\ninja.exe\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dC:\\AndroidStudioProjects\\0316\\sdk\\build\\intermediates\\cxx\\Debug\\3u5c3e6h\\obj\\armeabi-v7a\n-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dC:\\AndroidStudioProjects\\0316\\sdk\\build\\intermediates\\cxx\\Debug\\3u5c3e6h\\obj\\armeabi-v7a\n-DCMAKE_BUILD_TYPE\u003dDebug\n-BC:\\AndroidStudioProjects\\0316\\sdk\\.cxx\\Debug\\3u5c3e6h\\armeabi-v7a\n-GNinja\n-DANDROID_STL\u003dc++_shared\njvmArgs : \n\n",
-    "file_": "C:\\AndroidStudioProjects\\0316\\sdk\\libcxx_helper\\CMakeLists.txt",
-    "tag_": "debug|armeabi-v7a",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": -1122477462
-  },
-  {
-    "level_": 0,
-    "message_": "Exiting generation of C:\\AndroidStudioProjects\\0316\\sdk\\.cxx\\Debug\\3u5c3e6h\\armeabi-v7a\\compile_commands.json.bin normally",
-    "file_": "C:\\AndroidStudioProjects\\0316\\sdk\\libcxx_helper\\CMakeLists.txt",
-    "tag_": "debug|armeabi-v7a",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": -1686242619
-  },
-  {
-    "level_": 0,
-    "message_": "done executing cmake",
-    "file_": "C:\\AndroidStudioProjects\\0316\\sdk\\libcxx_helper\\CMakeLists.txt",
-    "tag_": "debug|armeabi-v7a",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": 1673294546
-  },
-  {
-    "level_": 0,
-    "message_": "write command file C:\\AndroidStudioProjects\\0316\\sdk\\.cxx\\Debug\\3u5c3e6h\\armeabi-v7a\\metadata_generation_command.txt",
-    "file_": "C:\\AndroidStudioProjects\\0316\\sdk\\libcxx_helper\\CMakeLists.txt",
-    "tag_": "debug|armeabi-v7a",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {},
-      "fieldsDescending": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": -1672982653
+    "memoizedHashCode": 1681375948
   },
   {
     "level_": 0,
@@ -179,6 +39,6 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": -683599666
+    "memoizedHashCode": -293751788
   }
 ]

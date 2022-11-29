@@ -1,3 +1,0 @@
-This is a Example of the Android Asset.
-the Asset folder can be accessed by AssetManager.
-AssetManager allows you to open and read raw files.
